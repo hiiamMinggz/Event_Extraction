@@ -1,6 +1,7 @@
 import re
 import string
 from itertools import product
+from difflib import SequenceMatcher
 
 def news_preprocess(text:str):
     # text = text.lower()
@@ -72,3 +73,30 @@ def get_title_case_position(text: str):
     for word in text.split():
         if word.istitle():
             return text[text.index(word):]
+def segment_list(lst):
+    result = []
+    temp = [lst[0]]
+
+    for i in range(1, len(lst)):
+        if lst[i] == lst[i-1] + 1:
+            temp.append(lst[i])
+        else:
+            result.append(temp)
+            temp = [lst[i]]
+
+    # Đảm bảo thêm list cuối cùng nếu cần
+    if temp:
+        result.append(temp)
+
+    return result
+
+def process_event(event:dict):
+    output_dict = {}
+    for key, values in event.items():
+        for value in values:
+            output_dict[value] = [key]
+
+    return output_dict
+
+def similar(a, b):
+    return SequenceMatcher(None, a, b).ratio()

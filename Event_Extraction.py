@@ -17,6 +17,7 @@ class Event_Extraction():
         print(self.title)
         for text in self.content:
             print(text)
+            print('_______')
     def extract_event_candidates(self):
         substrings = []
         # print(self.title)
@@ -34,14 +35,14 @@ class Event_Extraction():
         # print(len(self.content))
         occurrences_dict = count_substring_occurrences(whole_text, substrings)
         confirm_occurrences = [key for key in occurrences_dict.keys() if occurrences_dict[key] >= 2]
-        # print(occurrences_dict)
+        print(occurrences_dict)
         useful_words = []
         for words in confirm_occurrences:
             if has_title_case_word(words):
                 useful_words.append(words)
         if len(useful_words) < 2:
             useful_words = confirm_occurrences
-        # print(useful_words)
+        print(useful_words)
         combinations = make_combinations(useful_words)
         candidates = []
         for combi in combinations:

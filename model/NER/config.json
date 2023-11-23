@@ -1,0 +1,53 @@
+{
+  "_name_or_path": "NlpHUST/ner-vietnamese-electra-base",
+  "architectures": [
+    "ElectraForTokenClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "finetuning_task": "ner",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "B-LOCATION",
+    "1": "B-MISCELLANEOUS",
+    "2": "B-ORGANIZATION",
+    "3": "B-PERSON",
+    "4": "I-LOCATION",
+    "5": "I-MISCELLANEOUS",
+    "6": "I-ORGANIZATION",
+    "7": "I-PERSON",
+    "8": "O"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "B-LOCATION": 0,
+    "B-MISCELLANEOUS": 1,
+    "B-ORGANIZATION": 2,
+    "B-PERSON": 3,
+    "I-LOCATION": 4,
+    "I-MISCELLANEOUS": 5,
+    "I-ORGANIZATION": 6,
+    "I-PERSON": 7,
+    "O": 8
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.35.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 62000
+}
